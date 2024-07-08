@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('message_attachments', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->foreignId('message_id')->constrained('messages');
             $table->string('name', 255);
             $table->string('path', 1024);

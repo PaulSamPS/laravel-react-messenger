@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('messages', function (Blueprint $table) {
-            $table->id();
+            $table->id()->autoIncrement();
             $table->longText('message')->nullable();
             $table->foreignId('sender_id')->constrained('users');
             $table->foreignId('receiver_id')->nullable()->constrained('users');
